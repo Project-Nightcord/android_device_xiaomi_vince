@@ -9,10 +9,10 @@
 function blob_fixup() {
     case "${1}" in
         vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so)
-            "${PATCHELF_0_18}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
-            "${PATCHELF_0_18}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
+            "${PATCHELF}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
             ;;
     esac
 }
