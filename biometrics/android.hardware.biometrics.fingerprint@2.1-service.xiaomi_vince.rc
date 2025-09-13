@@ -5,7 +5,3 @@ service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.
     class late_start
     user system
     group system input uhid
-
-on property:ro.vendor.fingerprint.failed=1
-    stop vendor.fps_hal
-    mount none /vendor/etc/permissions/blank.xml /vendor/etc/permissions/android.hardware.fingerprint.xml bind
