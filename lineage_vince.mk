@@ -15,6 +15,23 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from vince device
 $(call inherit-product, device/xiaomi/vince/device.mk)
 
+# Axion Flags
+AXION_MAINTAINER := RenzAlt
+AXION_PROCESSOR := MSM8953_(Titanium_64)
+AXION_CAMERA_REAR_INFO := 13
+AXION_CAMERA_FRONT_INFO := 5
+TARGET_IS_LOW_RAM := true
+
+# Blur
+TARGET_ENABLE_BLUR := false
+
+# High Brightness Mode (HBM)
+HBM_SUPPORTED := false
+
+ifneq ($(WITH_GMS),true)
+TARGET_INCLUDES_LOS_PREBUILTS := true
+endif
+
 # Kernel
 TARGET_KERNEL_VERSION := 4.9
 
