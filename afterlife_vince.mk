@@ -19,7 +19,7 @@ $(call inherit-product, device/xiaomi/vince/device.mk)
 AFTERLIFE_MAINTAINER := RenzAlt
 
 # Kernel
-TARGET_KERNEL_VERSION := 4.9
+TARGET_KERNEL_VERSION := 4.19
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := vince
