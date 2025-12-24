@@ -21,6 +21,9 @@ AFTERLIFE_MAINTAINER := RenzAlt
 # Kernel
 TARGET_KERNEL_VERSION := 4.19
 
+# neverallows
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := vince
 PRODUCT_NAME := afterlife_vince
