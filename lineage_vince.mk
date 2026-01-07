@@ -15,6 +15,9 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from vince device
 $(call inherit-product, device/xiaomi/vince/device.mk)
 
+AVIUM_BUILDTYPE := Unoffical
+AVIUM_MAINTAINER := RenzAlt
+
 # Kernel
 TARGET_KERNEL_VERSION := 4.19
 
