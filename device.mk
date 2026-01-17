@@ -22,6 +22,11 @@ PRODUCT_PACKAGES += \
 TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
 
+# Dynamic Partitions
+PRODUCT_BUILD_SUPER_PARTITION := false
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.xiaomi \
@@ -52,6 +57,10 @@ $(call soong_config_set,qtipower,tap_to_wake_node,/sys/devices/platform/soc/78b7
 # Recovery
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/vince/proprietary/vendor/bin/hvdcp_opti:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hvdcp_opti
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom_ramdisk
 
 # Rootdir
 PRODUCT_PACKAGES += \
