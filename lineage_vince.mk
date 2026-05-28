@@ -15,6 +15,9 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from vince device
 $(call inherit-product, device/xiaomi/vince/device.mk)
 
+# GameBar
+MITHORIUM_INTEGRATE_GAMEBAR := true
+
 # Kernel
 TARGET_KERNEL_VERSION := 4.19
 
