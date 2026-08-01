@@ -12,11 +12,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from vince device
-$(call inherit-product, device/xiaomi/vince/device.mk)
-
 # Kernel
 TARGET_KERNEL_VERSION := 4.19
+
+# Inherit from vince device
+$(call inherit-product, device/xiaomi/vince/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := vince
@@ -24,10 +24,6 @@ PRODUCT_NAME := lineage_vince
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 5 Plus
 PRODUCT_MANUFACTURER := Xiaomi
-
-# Build Name
-BUILD_USERNAME := RenzAlt
-BUILD_HOSTNAME := nigo-at25
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 

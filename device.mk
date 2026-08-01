@@ -11,6 +11,9 @@ TARGET_BOARD_PLATFORM := msm8953
 $(call inherit-product, device/xiaomi/mithorium-common/mithorium.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
+# Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
@@ -28,14 +31,11 @@ PRODUCT_PACKAGES += \
     tune2fs_ramdisk \
     resize2fs_ramdisk
 
-ifeq ($(TARGET_KERNEL_VERSION),4.19)
-# Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Use FUSE passthrough
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.fuse.passthrough.enable=true
-endif
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -68,15 +68,9 @@ $(call soong_config_set,qtipower,tap_to_wake_node,/sys/devices/platform/soc/78b7
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/vince/proprietary/vendor/bin/hvdcp_opti:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hvdcp_opti
 
-# Fstab
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
-    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
-
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom_ramdisk \
-    fstab.qcom \
     init.xiaomi.device.rc
 
 # Soong namespaces
