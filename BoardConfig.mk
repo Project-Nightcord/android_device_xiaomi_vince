@@ -40,6 +40,7 @@ TARGET_SCREEN_DENSITY := 440
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
+TARGET_KERNEL_CLANG_VERSION := r563880c
 BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent androidboot.boot_devices=soc/7824900.sdhci
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
 TARGET_KERNEL_CONFIG := \
