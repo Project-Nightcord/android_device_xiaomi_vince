@@ -63,6 +63,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 $(call soong_config_set,qtipower,tap_to_wake_node,/sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0020/input/input4/wake_gesture)
+$(call soong_config_set,qtipower,interaction_boost,true)
 
 # Recovery
 PRODUCT_COPY_FILES += \
