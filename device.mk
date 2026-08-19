@@ -86,6 +86,7 @@ PRODUCT_COPY_FILES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom.ramdisk \
+    fstab.zram \
     init.xiaomi.device.rc
 
 # Soong namespaces
