@@ -16,6 +16,10 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    
+    <!-- Whether to play turbulence noise after clicking the play button -->
+    <bool name="config_turbulenceNoise">false</bool>   
+    
     <!-- The duraction of the show animation for the volume dialog in milliseconds -->
     <integer name="config_dialogShowAnimationDurationMs">150</integer>
 
